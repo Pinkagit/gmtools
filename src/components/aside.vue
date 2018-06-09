@@ -57,10 +57,6 @@ export default {
     /* 组件实例创建完成，属性已绑定，但DOM还未生成，$el属性还不存在 */
     created() { 
         var _this = this;
-        
-        /* Hub.$on('collapse', msg => {
-            this.isCollapse = msg;
-        }) */
 
         // 请求aside列表
         this.$ajax.get("/api/player/aside").then(function (response) {

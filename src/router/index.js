@@ -21,6 +21,10 @@ import TW_query from "@/pages/test-welfare/query";
 import TW_recharge from "@/pages/test-welfare/recharge_list";
 import TW_upload from "@/pages/test-welfare/upload_list";
 import Ser_reload_csv from "@/pages/server/reload_csv";
+import Ser_reload_lua from "@/pages/server/reload_lua";
+import Ser_setOpenTime from "@/pages/server/set_openserver_time";
+import Ser_get_protocol_contr from "@/pages/server/get_protocol_controller";
+import Ser_set_protocol_contr from "@/pages/server/set_protocol_controller";
 
 Vue.use(Router);
 
@@ -102,10 +106,26 @@ export default new Router({
 			path: "recharge_list",
 			component: TW_recharge,
 			name: "上传测试充值名单"
-		},{
+		}, {
 			path: "reload_csv",
 			component: Ser_reload_csv,
 			name: "重新加载CSV"
+		}, {
+			path: "reload_lua",
+			component: Ser_reload_lua,
+			name: "重新加载Lua"
+		}, {
+			path: "set_openserver_time",
+			component: Ser_setOpenTime,
+			name: "设置开服时间"
+		}, {
+			path: "get_protocol_controller",
+			component: Ser_get_protocol_contr,
+			name: "协议查询"
+		}, {
+			path: "set_protocol_controller",
+			component: Ser_set_protocol_contr,
+			name: "协议控制"
 		}]
 	}]
 })
