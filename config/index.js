@@ -11,13 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/': {
+      /* '/': {
         target: 'http://127.0.0.1:6001',
         changeOrigin: true,
         pathRewrite: {
           '^/': '/'
         }
-      }
+      } */
     },
 
     // Various Dev Server settings
@@ -57,7 +57,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 

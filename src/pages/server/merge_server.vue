@@ -171,7 +171,9 @@ export default {
                 console.log("feedback", response);
 
                 if (response.data.url == "merging") {
-                    this.$router.push({ path: response.data.url })
+                    console.log("oK merging");
+                    
+                    this.$router.push({ path: '/merging' });
                 }
                 
             }).catch(error => {
