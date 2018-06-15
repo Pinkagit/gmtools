@@ -282,7 +282,7 @@ export default {
             let _arguments = arguments;
             let _this = this;
             
-            this.$ajax.post("/api/player/playerinfo", obj).then(function(response) {
+            this.$ajax.post("/player/playerinfo", obj).then(function(response) {
                 console.log("playerInfo:", response);
 
                 if (response.data.err != '') {  // err提示
@@ -345,7 +345,7 @@ export default {
     },
     created() {
         // 获取dbserverlsit
-        this.$ajax.get("/api/dbserverlist").then((response) => {
+        this.$ajax.get("/dbserverlist").then((response) => {
             console.log('dbserverList:',response);
             this.dbserverlist = response.data;
         })

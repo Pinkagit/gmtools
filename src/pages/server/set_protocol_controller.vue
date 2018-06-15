@@ -8,7 +8,7 @@
                 </el-col>
             </el-form-item>
             
-            <checkbox-server prop="zoneid"></checkbox-server>
+            <checkbox-server></checkbox-server>
             
             <el-form-item>
                 <el-button type="primary" @click="onSubmit">确定</el-button>
@@ -28,11 +28,11 @@ export default {
     data() {
         return {
             formData: {
-                protocols: '',
+                protocols: '1001;1002',
                 zoneid: []
             },
             rules: {
-
+                
             }
         }
     },
@@ -52,6 +52,28 @@ export default {
         onSubmit() {
             this.formData.zoneid = this.$store.state.zoneid;
             console.log(this.formData);
+
+            this.$ajax.post("/service/addprotocol", this.formData).then(response => {
+                console.log(response);
+
+                if (response.data.retcode == "error") {
+                    this.$notify({
+                        title: '错误',
+                        message: response.data.retdesc,
+                        type: 'error'
+                    });
+                } else {
+                    this.$notify({
+                        title: '成功',
+                        message: "成功",
+                        type: 'success'
+                    });
+                }
+                
+            }).catch(error => {
+                console.log(error);
+            })
+            
         }
     }
 }

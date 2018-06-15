@@ -73,7 +73,7 @@ export default {
         onSubmit() {
             console.log("formData", this.formData);
             
-            this.$ajax.post("/api/giftcode/make", this.formData).then(response => {
+            this.$ajax.post("/giftcode/make", this.formData).then(response => {
                 console.log("giftcode", response);
 
                 if (response.data.retcode == 0) {

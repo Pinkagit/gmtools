@@ -40,10 +40,15 @@ export default {
     },
     methods: {
         getRechargeList() {
-            this.$ajax.get("/api/freecharge/check").then(response => {
+            this.$ajax.get("/freecharge/check").then(response => {
                 console.log("rechargeLsit", response);
                 
                 this.tableData = response.data.recharge;
+
+                this.$message({
+                    message: "更新成功",
+                    type: 'success'
+                })
             })
         },
         handleOper(index, params, type) {
@@ -54,7 +59,7 @@ export default {
 
             console.log("operObj", obj);
             
-            this.$ajax.post("/api/freecharge/check", obj).then(response => {
+            this.$ajax.post("/freecharge/check", obj).then(response => {
                 console.log("feedback", response);
 
                 if (response.data.result == 1) {

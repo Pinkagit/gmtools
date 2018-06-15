@@ -87,7 +87,7 @@ export default {
                 'zoneid': this.formData.zoneid
             }
 
-            this.$ajax.post("/api/mail/delglobalmail", obj).then(response => {
+            this.$ajax.post("/mail/delglobalmail", obj).then(response => {
                 console.log("feedback:", response);
                 
                 if (response.data.retcode == "ok") {
@@ -105,7 +105,7 @@ export default {
 
             this.loading = true;
 
-            this.$ajax.post("/api/mail/globalmail", this.formData, { timeout: 10000 }).then(response => {
+            this.$ajax.post("/mail/globalmail", this.formData, { timeout: 10000 }).then(response => {
                 console.log("globalmail:", response);
 
                 if (response.data.retcode == 'error') {
@@ -143,7 +143,7 @@ export default {
     },
     created() {
         // 获取服务器列表
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })

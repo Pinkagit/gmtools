@@ -27,14 +27,30 @@ export default {
             this.$store.commit("changeCollapse");
         },
         logout: function() {
-            alert("logout");
+        
+            this.$ajax.post("/logout").then(response => {
+                console.log("resp", response);
+
+                this.$router.push({ path: response.data.url })
+                
+            }).catch(error => {
+                console.log(error);
+            })
+            
         }
     },
     created() {
         // 获取用户名
-        this.$ajax.get("/api/userinfo").then(response => {
+        this.$ajax.get("/userinfo").then(response => {
             this.userinfo = response.data.user; 
         })
+    },
+    watch: {
+        /* userinfo(old, val) {
+            if (!val && !old) {
+                this.$router.push({ path: "unlogin" });
+            }
+        } */
     }
 }
 </script>

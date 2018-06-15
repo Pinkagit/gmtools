@@ -68,7 +68,7 @@ export default {
         }
     },
     created() {
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })
@@ -85,7 +85,7 @@ export default {
                         time: this.formData.time
                     }
 
-                    this.$ajax.post("/api/service/serverday", obj).then(response => {
+                    this.$ajax.post("/service/serverday", obj).then(response => {
                         console.log("feedback", response);
 
                         if (response.data.retcode == 0) {

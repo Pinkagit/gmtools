@@ -61,7 +61,7 @@ export default {
         onSubmit() {
             console.log("formData", this.formData);
 
-            this.$ajax.post("/api/betawelfare/", this.formData).then(response => {
+            this.$ajax.post("/betawelfare/", this.formData).then(response => {
                 console.log("betawelfare", response);
                 let t = [];
                 t[0] = response.data.data;

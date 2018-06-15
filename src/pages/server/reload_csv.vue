@@ -46,7 +46,7 @@ export default {
         }
     },
     created() {
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })
@@ -81,7 +81,7 @@ export default {
         reloadCsv() {
             console.log(this.formData);
 
-            this.$ajax.post('/api/service/reloadcsv', this.formData).then(response => {
+            this.$ajax.post('/service/reloadcsv', this.formData).then(response => {
                 console.log(response);
                 
                 if (response.data.retcode == "exec_ok") {

@@ -62,7 +62,7 @@ export default {
         }
     },
     created() {
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })
@@ -76,7 +76,7 @@ export default {
 
             console.log("obj", obj);
 
-            this.$ajax.post("/api/service/delprotocol", obj).then(response => {
+            this.$ajax.post("/service/delprotocol", obj).then(response => {
                 console.log("feedback", response);
 
                 if (response.data.retcode == "error") {
@@ -105,7 +105,7 @@ export default {
                 if (valid) {
                    console.log(this.formData);
 
-                    this.$ajax.post("/api/service/getprotocol", this.formData).then(response => {
+                    this.$ajax.post("/service/getprotocol", this.formData).then(response => {
                         console.log("GetProtocol", response);
 
                         if (response.data.retcode == "error") {
@@ -125,9 +125,6 @@ export default {
                     return false;
                 }
             })
-            
-            
-            
         },
         LoadProtocol() {
             this.$router.push({ path: '/set_protocol_controller' })

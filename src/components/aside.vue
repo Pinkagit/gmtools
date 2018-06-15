@@ -59,7 +59,7 @@ export default {
         var _this = this;
 
         // 请求aside列表
-        this.$ajax.get("/api/player/aside").then(function (response) {
+        this.$ajax.get("/player/aside").then(function (response) {
             console.log("aside:",response);
             _this.items = response.data.mynav;
             

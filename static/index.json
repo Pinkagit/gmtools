@@ -13,5 +13,11 @@
 		{ "name":"弹幕","id":13 },
 		{ "name":"阵营频道","id":5 }
 	],
+	"depList": [
+		{ "name": "后台", "value": 2, "pri_value": 2 },
+		{ "name": "运营", "value": 3, "pri_value": 3 },
+		{ "name": "运维", "value": 4, "pri_value": 4 },
+		{ "name": "客服", "value": 5, "pri_value": 4 }
+	],
 	"result"	: ["未查询到结果"]
 }

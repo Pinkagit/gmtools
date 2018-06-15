@@ -1,7 +1,7 @@
 <template>
     <div>
         <transition name="fade">
-            <div class="btn-tip" v-show="tip_isShow">{{ tipMessage }}</div>
+            <div v-if="tipMessage" class="btn-tip" v-show="tip_isShow">{{ tipMessage }}</div>
         </transition>
         <el-button ref="testttt" type="primary" icon="el-icon-refresh" circle :class="['refresh-btn', { 'rotate_360': isRotate }]" @click="refreshFun"></el-button>
 

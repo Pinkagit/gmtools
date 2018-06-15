@@ -6,7 +6,7 @@
                     <el-upload
                     class="upload-demo"
                     drag
-                    action="/api/betawelfare/upload"
+                    action="/betawelfare/upload"
                     :auto-upload="false"
                     :limit="1"
                     :on-preview="handlePreview"
@@ -90,7 +90,7 @@ export default {
         onSubmit() {
 
             if (this.uploadForm.get('file')) {
-                this.$ajax.post("/api/betawelfare/upload", this.uploadForm).then(response => {
+                this.$ajax.post("/betawelfare/upload", this.uploadForm).then(response => {
                     console.log("feedback", response);
                     
                 })     

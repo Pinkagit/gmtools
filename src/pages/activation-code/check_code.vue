@@ -53,7 +53,7 @@ export default {
             this.$refs['form'].validate((valid) => {
                 if (valid) {
                     console.log(this.formData);
-                    this.$ajax.post("/api/giftcode/check", this.formData).then(response => {
+                    this.$ajax.post("/giftcode/check", this.formData).then(response => {
                         console.log("checkResult", response);
                         let t = [];
                         t[0] = response.data.data;

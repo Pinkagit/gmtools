@@ -57,9 +57,13 @@ export default {
     },
     methods: {
         get_radio_table() {
-            this.$ajax.post("/api/broadcast").then(response => {
+            this.$ajax.post("/broadcast").then(response => {
                 console.log("radio_table", response);
                 this.tableData = response.data.data;
+                this.$message({
+                    message: "更新成功",
+                    type: 'success'
+                })
             })
         },
         SetOpen(index, param_index) {
@@ -67,7 +71,7 @@ export default {
                 'index': param_index
             }
 
-            this.$ajax.post('/api/broadcast/setopen', obj).then(response => {
+            this.$ajax.post('/broadcast/setopen', obj).then(response => {
                 console.log("feedback", response);
                 this.$message({
                     message: "操作成功",
@@ -89,7 +93,7 @@ export default {
                 'index': param_index
             }
 
-            this.$ajax.post("/api/broadcast/del", obj).then(response => {
+            this.$ajax.post("/broadcast/del", obj).then(response => {
                 console.log("feedback", response);
                 this.$message({
                     message: "操作成功",

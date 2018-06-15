@@ -7,7 +7,7 @@ export default new vuex.Store({
     state: {
         isCollapse: false,      // 导航菜单折叠状态
         breadcrumb_title: [],    // 面包屑
-        zoneid: []              // serverlist
+        zoneid: [],              // serverlist
     },
     mutations: {
         changeCollapse (state) {                

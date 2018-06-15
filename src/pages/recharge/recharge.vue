@@ -59,7 +59,7 @@ export default {
     },
     created() {
         // 
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })
@@ -79,7 +79,7 @@ export default {
             this.formData.time = nowTime;
             console.log("formData", this.formData);
 
-            this.$ajax.post("/api/freecharge/send", this.formData).then(response => {
+            this.$ajax.post("/freecharge/send", this.formData).then(response => {
                 console.log("feedback", response);
                 if (response.data.retcode == "error") {
                     this.$notify({
@@ -106,7 +106,7 @@ export default {
                 let obj = {
                     "rechargeid": this.formData.rechargeid
                 }
-                this.$ajax.post("/api/qurechargename", obj).then(response => {
+                this.$ajax.post("/qurechargename", obj).then(response => {
                     console.log("rechargeName", response);
 
                     this.formData.rechargename = response.data.rechargename;

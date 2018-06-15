@@ -65,7 +65,7 @@ export default {
             this.currencyType = response.data.currencyType;
         })
         // 获取服务器列表
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })
@@ -83,7 +83,7 @@ export default {
         AddCurrency() {
             console.log(this.formData);
             
-            this.$ajax.post('/api/player/currency', this.formData).then( response => {
+            this.$ajax.post('/player/currency', this.formData).then( response => {
                 console.log("feedback:", response);
                 //
                 if (response.data.retcode == "exec_ok") {

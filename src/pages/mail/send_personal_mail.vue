@@ -19,7 +19,7 @@
                     <el-form-item label="上传玩家ID">
                         <el-upload
                             ref="upload"
-                            action="/api/mail/sendmail"
+                            action="/mail/sendmail"
                             :on-preview="handlePreview"
                             :on-remove="handleRemove"
                             :on-change="getFile"
@@ -147,7 +147,7 @@ export default {
                 console.log(pair[0]+ ':'+ pair[1]); 
             } */
             
-            this.$ajax.post('/api/mail/sendmail', this.uploadForm).then(response => {
+            this.$ajax.post('/mail/sendmail', this.uploadForm).then(response => {
                 console.log("feedback", response);
 
                 if (response.data.retcode != "error") {
@@ -214,7 +214,7 @@ export default {
                     "proItem": proItem
                 }
 
-                this.$ajax.post('/api/quitemlist', proData).then(response => {
+                this.$ajax.post('/quitemlist', proData).then(response => {
                     console.log("quitemList:", response);
 
                     this.itemList = response.data.itemlist;
@@ -278,7 +278,7 @@ export default {
         }
     },
     created() {
-        this.$ajax.get("/api/serverlist").then((response) => {
+        this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
             this.serverList = response.data;
         })

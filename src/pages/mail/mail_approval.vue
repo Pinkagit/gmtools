@@ -135,7 +135,7 @@ export default {
     },
     methods: {
         getMailList() {
-            this.$ajax.get('/api/mail/check').then(response => {
+            this.$ajax.get('/mail/check').then(response => {
                 //
                 for(let i = 0, len = response.data.mails.length; i < len; i++) {
                     response.data.mails[i].msg.arritemsName = response.data.mails[i].msg.itemsName.split(" ");
@@ -162,7 +162,7 @@ export default {
             }
             console.log("operObj:", obj);
             
-            this.$ajax.post("/api/mail/check", obj).then(response => {
+            this.$ajax.post("/mail/check", obj).then(response => {
                 console.log("feedback:", response);
                 
                 if (response.data.retcode == "ok") {
