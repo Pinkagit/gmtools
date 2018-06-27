@@ -2,8 +2,7 @@
     <div class="wrap">
        <g-header></g-header>
        <g-aside></g-aside>
-       <g-content-box>
-       </g-content-box>
+       <g-content-box></g-content-box>
     </div>
 </template>
 
