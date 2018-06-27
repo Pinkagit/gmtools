@@ -17,6 +17,7 @@ import Check_V_code from "@/pages/activation-code/check_valid_code";
 import Check_code from "@/pages/activation-code/check_code";
 import Query_radio from "@/pages/broadcast/query_radio";
 import Send_radio from "@/pages/broadcast/send_radio";
+import Prison_query from "@/pages/prison/prison";
 import TW_query from "@/pages/test-welfare/query";
 import TW_recharge from "@/pages/test-welfare/recharge_list";
 import TW_upload from "@/pages/test-welfare/upload_list";
@@ -79,6 +80,10 @@ export default new Router({
 					path: "mail_approval",
 					component: Mail_approval,
 					name: "邮件审批"
+				}, {
+					path: 'query_prison',
+					component: Prison_query,
+					name: '监狱查询'
 				}, {
 					path: "recharge",
 					component: Recharge,
