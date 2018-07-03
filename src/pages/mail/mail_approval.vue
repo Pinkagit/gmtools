@@ -122,6 +122,7 @@
 import refreshBtn from "@/components/refresh";
 
 export default {
+    name: 'mail_approval',
     components: {
         'refresh-btn': refreshBtn
     },

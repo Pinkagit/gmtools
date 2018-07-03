@@ -1,5 +1,5 @@
 <template>
-    <div class="form-box">
+    <div class="form-box" name="封号">
         <el-form ref="form" :model="formData" :rules="rules" label-position="right" label-width="100px">
             <el-form-item label="选择服务器" prop="zoneid">
                 <el-select v-model="formData.zoneid" placeholder="选择服务器">
@@ -40,6 +40,7 @@
 
 <script>
 export default {
+    name: 'ban',
     data() {
         // 自定义验证规则
          var validate_time = (rule, value, callback) => {

@@ -215,7 +215,7 @@
 
 <script>
 export default {
-   
+    name: 'query_players',
     data() {
         var validate_charid = (rule, value, callback) => {
             

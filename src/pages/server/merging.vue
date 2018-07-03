@@ -41,6 +41,7 @@
 import refreshBtn from "@/components/refresh";
 
 export default {
+    name: 'merging',
     components: {
         'refresh-btn': refreshBtn
     },

@@ -81,6 +81,7 @@
 
 <script>
 export default {
+    name: 'send_radio',
     data() {
         // 自定义验证规则
         var validate_type = (rule, value, callback) => {

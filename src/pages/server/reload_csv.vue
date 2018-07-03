@@ -29,6 +29,7 @@
 
 <script>
 export default {
+    name: 'reload_csv',
     data(){
         return {
             checkAll: false,

@@ -53,6 +53,7 @@
 
 <script>
 export default {
+    name: 'query_global_mail',
     data() {
         return {
             serverList: [],

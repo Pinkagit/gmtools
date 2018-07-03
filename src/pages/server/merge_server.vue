@@ -67,6 +67,7 @@
 import checkboxServer from "@/components/checkbox-server";
 
 export default {
+    name: 'merge_server',
     components: {
         'checkbox-server': checkboxServer
     },

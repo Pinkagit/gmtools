@@ -39,6 +39,7 @@
 
 <script>
 export default {
+    name: 'query_prison',
     data() {
         return {
             formData: {

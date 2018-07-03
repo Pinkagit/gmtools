@@ -46,6 +46,7 @@
 
 <script>
 export default {
+    name: 'query_tw',
     data() {
         return {
             formData: {

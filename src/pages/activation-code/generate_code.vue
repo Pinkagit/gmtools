@@ -55,6 +55,7 @@
 import _ from "@/store/FileSaver.min.js";
 
 export default {
+    name: 'generate_code',
     data() {
         return {
             formData: {

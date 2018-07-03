@@ -57,6 +57,7 @@
 import itemsName from "@/components/itemsName";
 
 export default {
+    name:'send_global_mail',
     components: {
         "items-name":itemsName
     },

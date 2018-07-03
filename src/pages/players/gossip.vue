@@ -38,6 +38,7 @@
 
 <script>
 export default {
+    name: "gossip",
     data() {
         // 自定义验证规则
          var validate_time = (rule, value, callback) => {

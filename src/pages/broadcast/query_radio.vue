@@ -44,6 +44,7 @@
 import refreshBtn from "@/components/refresh";
 
 export default {
+    name: 'query_radio',
     components: {
         'refresh-btn': refreshBtn
     },

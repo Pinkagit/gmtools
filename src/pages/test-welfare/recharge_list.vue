@@ -39,6 +39,7 @@
 
 <script>
 export default {
+    name: 'recharge_list',
     data() {
         return {
             perview: '',

@@ -55,6 +55,7 @@
 
 <script>
 export default {
+    name: 'reset_permissions',
     data() {
         return {
             formData: {

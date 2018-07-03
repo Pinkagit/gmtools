@@ -27,6 +27,7 @@
 
 <script>
 export default {
+    name: 'set_openserver_time',
     data() {
         return {
             formData: {

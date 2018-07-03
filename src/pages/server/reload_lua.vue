@@ -28,6 +28,7 @@
 
 <script>
 export default {
+    name: 'reload_lua',
     data() {
         return{
             checkAll: false,

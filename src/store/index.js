@@ -8,6 +8,7 @@ export default new vuex.Store({
         isCollapse: false,      // 导航菜单折叠状态
         breadcrumb_title: [],    // 面包屑
         zoneid: [],              // serverlist
+        includePageNames: []
     },
     mutations: {
         changeCollapse (state) {                
@@ -18,6 +19,16 @@ export default new vuex.Store({
         },
         change_checkbox_server(state, zoneid) {
             state.zoneid = zoneid;
+        },
+        add_includePN(state, name) {    // 添加 tag
+            state.includePageNames.push(name);
+        },
+        remove_includePN(state, name) { // 移除 tag
+            let index = state.includePageNames.indexOf(name);
+            state.includePageNames.splice(index, 1);
+        },
+        remove_other_includePN(state, name) { // 移除其他 tag
+            state.includePageNames = [name];     
         }
     }
 })

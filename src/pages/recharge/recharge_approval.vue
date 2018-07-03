@@ -27,6 +27,7 @@
 import refreshBtn from "@/components/refresh";
 
 export default {
+    name: 'recharge_approval',
     components: {
         "refresh-btn": refreshBtn
     },

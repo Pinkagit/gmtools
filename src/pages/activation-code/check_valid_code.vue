@@ -48,6 +48,7 @@
 import _ from "@/store/FileSaver.min.js";
 
 export default {
+    name:'check_valid_code',
     data() {
         return {
             formData: {

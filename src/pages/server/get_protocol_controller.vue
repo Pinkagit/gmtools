@@ -46,6 +46,7 @@
 
 <script>
 export default {
+    name: 'get_protocol_controller',
     data() {
         return {
             formData: {

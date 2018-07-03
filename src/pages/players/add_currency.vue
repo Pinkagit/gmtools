@@ -30,6 +30,7 @@
 
 <script>
 export default {
+    name: "add_currency",
     data() {
         return{
             formData: {

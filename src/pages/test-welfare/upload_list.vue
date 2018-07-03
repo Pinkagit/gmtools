@@ -39,6 +39,7 @@
 
 <script>
 export default {
+    name: 'upload_list',
     data() {
         return {
             perview: '',

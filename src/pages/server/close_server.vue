@@ -21,6 +21,7 @@
 import checkboxServer from "@/components/checkbox-server";
 
 export default {
+    name: 'close_server',
     components: {
         'checkbox-server': checkboxServer
     },

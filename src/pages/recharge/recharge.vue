@@ -33,6 +33,7 @@
 
 <script>
 export default {
+    name: 'recharge',
     data() {
         return {
             formData: {

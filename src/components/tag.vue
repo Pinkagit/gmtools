@@ -24,44 +24,51 @@ export default {
     };
   },
   created() {
-		this.setTags(this.$route);
+    this.setTags(this.$route);
   },
   methods: {
     handleClose(index) {
-		if (this.tags.length == 1) {
-			return false;
-		}
+      if (this.tags.length == 1) {
+        return false;
+      }
+      this.$store.commit('remove_includePN', this.tags[index].path.substring(1));
 
-		if (this.tags[index].name == this.$route.name) {
-			this.tags.splice(index, 1);
-			const nextPath = this.tags[this.tags.length-1].path;
-			this.$router.push({ path: nextPath });
-		} else {
-			this.tags.splice(index, 1);
-		}
+      if (this.tags[index].name == this.$route.name) {
+        this.tags.splice(index, 1);
+        const nextPath = this.tags[this.tags.length - 1].path;
+        this.$router.push({ path: nextPath });
+      } else {
+        this.tags.splice(index, 1);
+      }
     },
     setTags(newPath) {
-        this.routeName = newPath.name;
+      this.routeName = newPath.name;
+      
+      const isExist = this.tags.some(item => {
+        return item.name == newPath.name;
+      });
 
-        const isExist = this.tags.some(item => {
-            return item.name == newPath.name;
+      !isExist &&
+        this.tags.push({
+          name: newPath.name,
+          path: newPath.path
         });
 
-        !isExist && this.tags.push({
-			name: newPath.name,
-			path: newPath.path
-		});
-	},
-	closeOther() {
-		const curTags = this.tags.filter( item => {
-			return item.name == this.$route.name;
-		})
-		this.tags = curTags;
-	}
+      !isExist && this.$store.commit("add_includePN", newPath.path.substring(1))  
+    },
+    closeOther() {
+      const curTags = this.tags.filter(item => {
+        return item.name == this.$route.name;
+      });
+      this.tags = curTags;
+      
+      this.$store.commit('remove_other_includePN', this.$route.path.substring(1))
+      
+    }
   },
   watch: {
     $route(newPath, oldPath) {
-        this.setTags(newPath)
+      this.setTags(newPath);
     }
   }
 };
@@ -78,23 +85,23 @@ export default {
   margin-right: 10px;
   cursor: pointer;
 }
-.tags-title{
-	text-decoration: none;
-	display: inline-block;
-	margin-right: 3px;
+.tags-title {
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 3px;
 }
-.el-tag{
-	padding-left: 0;
+.el-tag {
+  padding-left: 0;
 }
-.el-tag>a{
-	color: #409EFF;
-	padding-left: 10px;
+.el-tag > a {
+  color: #409eff;
+  padding-left: 10px;
 }
-.el-tag--info>a{
-	color: #909399;
+.el-tag--info > a {
+  color: #909399;
 }
-.tags-button{
-	float:right;
+.tags-button {
+  float: right;
 }
 </style>
 

@@ -22,6 +22,7 @@
 import checkboxServer from "@/components/checkbox-server";
 
 export default {
+    name: 'set_protocol_controller',
     components: {
         'checkbox-server': checkboxServer
     },

@@ -56,6 +56,7 @@
 import refreshBtn from "@/components/refresh";
 
 export default {
+    name: 'check_registration',
     components: {
         'refresh-btn': refreshBtn
     },

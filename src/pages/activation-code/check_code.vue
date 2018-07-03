@@ -35,6 +35,7 @@
 
 <script>
 export default {
+    name: 'check_code',
     data() {
         return {
             formData: {

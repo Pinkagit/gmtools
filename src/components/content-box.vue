@@ -15,7 +15,7 @@
          <!-- content -->
          <div class="content">
              <transition name="fade" mode="out-in">
-                 <keep-alive>
+                 <keep-alive :include="this.$store.state.includePageNames">
                     <router-view></router-view>
                 </keep-alive>
              </transition>
