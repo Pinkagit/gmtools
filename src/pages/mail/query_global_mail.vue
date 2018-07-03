@@ -117,7 +117,6 @@ export default {
                     this.loading = false;
                     return false;
                 }
-                console.log("then");
                 
                 if (response.data.retdata.mails) {
                     for(let i = 0, len = response.data.retdata.mails.length; i < len; i++) {

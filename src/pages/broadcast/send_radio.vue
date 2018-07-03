@@ -30,11 +30,11 @@
                 </el-select>
             </el-form-item>
 
-            <el-form-item label="玩家ID" prop="charid">
+            <!-- <el-form-item label="玩家ID" prop="charid">
                 <el-col :span="12">
                     <el-input v-model.number="formData.charid" placeholder="输入玩家ID"></el-input>
                 </el-col>
-            </el-form-item>
+            </el-form-item> -->
 
             <el-form-item label="选择时间" prop="time">
                 <el-col :span="20">
@@ -109,7 +109,7 @@ export default {
                 zoneid: [],
                 type: 0,
                 channal: '',
-                charid: '',
+                // charid: '',
                 start: '',
                 end: '',
                 evr: 10,
@@ -127,10 +127,10 @@ export default {
                 channal: [
                     { required: true, message: '请选择频道', trigger: 'change' }
                 ],
-                charid: [
+                /* charid: [
                     { required: true, message: '请输入玩家ID', trigger: 'blur' },
                     { type: 'number', message: 'ID必须为数字' }
-                ],
+                ], */
                 time: [
                     { validator: validate_time, trigger: 'blur' }
                 ],

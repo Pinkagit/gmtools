@@ -171,7 +171,7 @@ export default {
             this.$ajax.post("/service/merge", obj).then(response => {
                 console.log("feedback", response);
 
-                if (response.data.url == "merging") {
+                if (response.data.url == "/merging") {
                     console.log("oK merging");
                     
                     this.$router.push({ path: '/merging' });
