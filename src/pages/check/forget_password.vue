@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-row style="min-height:150px;">
-            <el-col :span="7">
+            <el-col :lg="7" :md="12">
                 <el-form ref="form" :model="formData" :rules="rules" label-position="right" label-width="100px" @submit.native.prevent>
                     <el-form-item label="账号" prop="username">
                         <el-col :span="12">
@@ -14,7 +14,7 @@
                     </el-form-item>
                 </el-form>
             </el-col>
-            <el-col :span="17">
+            <el-col :lg="17">
                 <transition name="slide-fade">
                     <el-card class="box-card" v-show="tableData.length > 0">
                         <div class="code-box">
@@ -127,7 +127,7 @@ export default {
 
 <style lang="scss" scoped>
 .box-card{
-    width: 80%;
+    width: 95%;
 }
 .slide-fade-enter-active, .slide-fade-leave-active {
   transition: all .3s ease;

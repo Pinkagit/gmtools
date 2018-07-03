@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        <el-col :span="9">
+        <el-col :lg="9" :md="12">
             <el-form ref="form" :rules="rules" :model="formData" label-position="right" label-width="100px" @submit.native.prevent>
                 <el-form-item label="激活码" prop="code">
                     <el-col :span="12">
@@ -13,7 +13,7 @@
                 </el-form-item>
             </el-form>
         </el-col>
-        <el-col :span="15">
+        <el-col :lg="15">
             <transition name="slide-fade">
                 <el-card class="box-card" v-show="tableData.length">
                     <div class="code-box">
@@ -81,7 +81,7 @@ export default {
     overflow: hidden;
 }
 .box-card{
-    width: 550px;
+    width: 90%;
 }
 .code-box{
     max-height: 170px;

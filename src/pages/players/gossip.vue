@@ -123,19 +123,19 @@ export default {
         onSubmit() {
             this.$refs['form'].validate((valid) => {
                 if (valid) {
-                    this.banLogin();
+                    this.BanTalk();
                 } else {
                     return false;
                 }
             })
         },
-        banLogin() {
+        BanTalk() {
             this.formData.begintime = Date.parse(new Date(this.timeValue[0])) / 1000;
             this.formData.endtime = Date.parse(new Date(this.timeValue[1])) / 1000;
 
             console.log("formData:", this.formData);
             
-            this.$ajax.post("/player/banlogin", this.formData).then((response) => {
+            this.$ajax.post("/player/bantalk", this.formData).then((response) => {
                 console.log("feedback:", response);
                 
                 if (response.data.retcode == "exec_ok") {

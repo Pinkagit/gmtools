@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        <el-col :span="9">
+        <el-col :lg="9" :md="10">
             <div class="form-box">
                 <el-form ref="form" :model="formData" :rules="rules" label-position="right" label-width="100px">
 
@@ -28,7 +28,7 @@
                 </el-form>
             </div>
         </el-col>
-        <el-col :span="15">
+        <el-col :lg="15" :md="14">
             <transition name="slide-fade">
                 <el-card class="box-card" v-show="giftcode">
                     <div slot="header" class="clearfix">
