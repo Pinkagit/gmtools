@@ -235,6 +235,7 @@ export default {
                 
             } else if(this.formData.items == "") {
                 this.itemList = [];
+                this.isErr = [];
             }
             
         },
