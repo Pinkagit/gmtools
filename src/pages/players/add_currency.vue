@@ -68,10 +68,7 @@ export default {
         // 获取服务器列表
         this.$ajax.get("/serverlist").then((response) => {
             console.log("serverList:", response);
-            // this.serverList = response.data;
-            this.serverList = [
-                { servername: '', zoneid: 2 }
-            ]
+            this.serverList = response.data;
         })
     },
     methods: {
