@@ -28,6 +28,12 @@
                         </el-col>
                     </el-form-item>
 
+                    <el-form-item label="渠道" prop="channel">
+                        <el-col :span="12">
+                            <el-input v-model="formData.channel"></el-input>
+                        </el-col>
+                    </el-form-item>
+
                     <el-form-item>
                         <el-button type="primary" @click="onSubmit">确定</el-button>
                     </el-form-item>
@@ -62,7 +68,8 @@ export default {
                 zoneid: '1',
                 type: '1',
                 num: '100',
-                prefix: 'tx'
+                prefix: 'tx',
+                channel: '1'
             },
             rules: {
             },

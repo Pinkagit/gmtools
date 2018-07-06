@@ -22,6 +22,8 @@
 
                             <el-table-column prop="type" label="类型"></el-table-column>
 
+                            <el-table-column prop="channel" label="渠道号"></el-table-column>
+
                             <el-table-column prop="err" label="Err"></el-table-column>
 
                             <el-table-column prop="str" width="150" label="结果"></el-table-column>

@@ -16,6 +16,12 @@
                         </el-col>
                     </el-form-item>
 
+                    <el-form-item label="渠道" prop="channel">
+                        <el-col :span="12">
+                            <el-input v-model="formData.channel"></el-input>
+                        </el-col>
+                    </el-form-item>
+
                     <el-form-item label="数量" prop="num">
                         <el-col :span="12">
                             <el-input v-model.number="formData.num"></el-input>
@@ -54,6 +60,7 @@ export default {
             formData: {
                 zoneid: '',
                 type: '',
+                channel: '',
                 num: ''
             },
             rules: {},
@@ -74,9 +81,9 @@ export default {
 
                     if (response.data.data == "") {
                         this.$notify({
-                            title: '错误',
-                            message: "参数出错",
-                            type: 'error'
+                            title: '警告',
+                            message: "未查询到结果",
+                            type: 'warning'
                         });
                     }
                     
