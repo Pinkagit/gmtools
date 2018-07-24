@@ -312,7 +312,7 @@ export default {
                     }
 
                     response.data.base['plataccid'] = response.data.plataccid   // 用于我们内部登录玩家账号的字符串
-                    _this.basic_info[0] = response.data.base;
+                    _this.basic_info = [response.data.base];
                     _this.backpack_info = response.data.bagdata;
 
                     for (let i = 0, len = response.data.parts.PartData.length; i < len; i++) {
