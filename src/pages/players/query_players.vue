@@ -308,6 +308,7 @@ export default {
                         
                         _this.nameTab_show = false;
                         _this.baseTab_show = true;
+                        _this.tabpanName = 'info';
                     }
 
                     response.data.base['plataccid'] = response.data.plataccid   // 用于我们内部登录玩家账号的字符串
