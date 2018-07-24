@@ -49,6 +49,8 @@
                             </el-table-column>
                             <el-table-column prop="roleid" label="ID">
                             </el-table-column>
+                            <el-table-column prop="plataccid" label="账号信息">
+                            </el-table-column>
                             <el-table-column prop="name" label="角色名">
                             </el-table-column>
                             <el-table-column prop="profession" label="职业">
@@ -308,6 +310,7 @@ export default {
                         _this.baseTab_show = true;
                     }
 
+                    response.data.base['plataccid'] = response.data.plataccid   // 用于我们内部登录玩家账号的字符串
                     _this.basic_info[0] = response.data.base;
                     _this.backpack_info = response.data.bagdata;
 
