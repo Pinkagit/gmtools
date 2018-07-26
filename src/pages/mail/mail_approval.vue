@@ -140,8 +140,11 @@ export default {
                 //
                 if (response.data.mails.length > 0) {
                     for(let i = 0, len = response.data.mails.length; i < len; i++) {
-                        response.data.mails[i].msg.arritemsName = response.data.mails[i].msg.itemsName.split(" ");
-
+                        if(response.data.mails[i].msg.itemsName != undefined) {     // 兼容老版本邮件
+                            response.data.mails[i].msg.arritemsName = response.data.mails[i].msg.itemsName.split(" ");
+                        } else {
+                             response.data.mails[i].msg.arritemsName = []
+                        }
                         response.data.mails[i].msg.arritems = response.data.mails[i].msg.items.split(";");
                     }
                 }
