@@ -16,12 +16,6 @@
                         </el-col>
                     </el-form-item>
 
-                    <el-form-item label="渠道" prop="channel">
-                        <el-col :span="12">
-                            <el-input v-model="formData.channel"></el-input>
-                        </el-col>
-                    </el-form-item>
-
                     <el-form-item label="数量" prop="num">
                         <el-col :span="12">
                             <el-input v-model.number="formData.num"></el-input>
@@ -60,7 +54,6 @@ export default {
             formData: {
                 zoneid: '',
                 type: '',
-                channel: '',
                 num: ''
             },
             rules: {},

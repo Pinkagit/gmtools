@@ -53,6 +53,8 @@
                             </el-table-column>
                             <el-table-column prop="name" label="角色名">
                             </el-table-column>
+                            <el-table-column prop="platformid" label="平台ID">
+                            </el-table-column>
                             <el-table-column prop="profession" label="职业">
                             </el-table-column>
                             <el-table-column prop="faction" label="阵营">
@@ -311,7 +313,6 @@ export default {
                         _this.tabpanName = 'info';
                     }
 
-                    response.data.base['plataccid'] = response.data.plataccid   // 用于我们内部登录玩家账号的字符串
                     _this.basic_info = [response.data.base];
                     _this.backpack_info = response.data.bagdata;
 
