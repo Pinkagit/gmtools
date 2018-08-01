@@ -215,6 +215,7 @@ export default {
             this.formData.start = Date.parse(new Date(this.timeValue[0]));
             this.formData.end = Date.parse(new Date(this.timeValue[1]));
 
+            this.formData.type = 0;
             for(let i = 0, len = this.arrtype.length; i < len; i++) {
                 this.formData.type += Number(this.arrtype[i]);
             }
