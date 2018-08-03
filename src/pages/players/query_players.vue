@@ -57,7 +57,7 @@
                             </el-table-column>
                             <el-table-column prop="profession" label="职业">
                             </el-table-column>
-                            <el-table-column prop="faction" label="阵营">
+                            <el-table-column prop="faction" label="阵营威望">
                             </el-table-column>
                             <el-table-column prop="sex" label="性别">
                             </el-table-column>

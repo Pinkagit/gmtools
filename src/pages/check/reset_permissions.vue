@@ -39,7 +39,8 @@
                                                 :value="item.value">
                                                 </el-option>
                                             </el-select>
-                                        </el-col>                                  <el-col :span="6">
+                                        </el-col>                                  
+                                        <el-col :span="6">
                                             <el-button type="primary" @click="certain(scope.row)" size="small">确定</el-button>
                                         </el-col>
                                     </template>
