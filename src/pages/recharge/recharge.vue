@@ -41,6 +41,7 @@ export default {
                 roleid: '',
                 rechargeid: '',
                 rechargename: '',
+                rechargemoney: '',
                 time: ''
             },
             rules: {
@@ -110,13 +111,15 @@ export default {
                 this.$ajax.post("/qurechargename", obj).then(response => {
                     console.log("rechargeName", response);
 
-                    this.formData.rechargename = response.data.rechargename;
+                    this.formData.rechargename = response.data.rechargename[0];
+                    this.formData.rechargemoney = response.data.rechargename[1];
                     
                 }).catch(error => {
                     console.log(error);
                 })
             } else {
-                this.rechargename = ""
+                this.formData.rechargename = "";
+                this.formData.rechargemoney = "";
             }
         }
     }

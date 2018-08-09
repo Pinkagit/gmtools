@@ -79,6 +79,8 @@
                             </el-table-column>
                             <el-table-column prop="itemid" label="物品ID">
                             </el-table-column>
+                            <el-table-column prop="itemname" label="物品名">
+                            </el-table-column>
                             <el-table-column prop="itemnum" label="数量">
                             </el-table-column>
                             <el-table-column prop="status" label="状态">
@@ -150,6 +152,8 @@
                             <el-table-column prop="guid" label="唯一ID">
                             </el-table-column>
                             <el-table-column prop="itemid" label="物品ID">
+                            </el-table-column>
+                            <el-table-column prop="itemname" label="物品名">
                             </el-table-column>
                             <el-table-column prop="itemnum" label="数量">
                             </el-table-column>

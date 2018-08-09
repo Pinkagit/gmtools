@@ -16,6 +16,7 @@
                 <el-col :span="20">
                     <el-date-picker
                     v-model="timeValue"
+                    :default-time="defaultTime"
                     type="datetimerange"
                     :picker-options="pickerOptions"
                     range-separator="至"
@@ -51,6 +52,7 @@ export default {
             }
         }
         return{
+            defaultTime: [`${new Date().getHours()} : ${new Date().getMinutes()} : ${new Date().getSeconds()}`, '00:00:00'],
             timeValue: [new Date(), ''],
             pickerOptions: {
                 shortcuts: [{

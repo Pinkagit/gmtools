@@ -13,6 +13,7 @@
             <el-table-column prop="serverid" label="服务器ID"></el-table-column>
             <el-table-column prop="msg.rechargeid" label="充值ID"></el-table-column>
             <el-table-column prop="rechargename" label="充值说明"></el-table-column>
+            <el-table-column prop="rechargemoney" label="价格（¥）" min-width="85"></el-table-column>
             <el-table-column label="操作" width="150">
                 <template slot-scope="scope">
                     <el-button type="primary" size="mini" @click="handleOper(scope.$index, scope.row, 1)">通过</el-button>
