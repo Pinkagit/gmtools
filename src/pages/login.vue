@@ -74,6 +74,8 @@
 
 <script>
 import _ from "@/store/unit.js";
+import md5 from "js-md5";
+let Base64  = require('js-base64').Base64;
 
 export default {
     
@@ -168,10 +170,13 @@ export default {
         GMLogin() {
             this.$refs['form'].validate((valid) => {
                 if (valid) {
-                    
-                    console.log("formData", this.formData);
 
-                    this.$ajax.post("/login", this.formData).then(response => {
+                    let mdObj = {
+                        username: this.formData.username,
+                        password: md5(this.formData.password)       // md5加密
+                    }
+                    
+                    this.$ajax.post("/login", mdObj).then(response => {
                         console.log("feedback", response);
 
                         if (response.data.err) {
@@ -182,7 +187,7 @@ export default {
                         } else {
                             if (this.checked) {
                                 _.setCookie('username', this.formData.username, 30);
-                                _.setCookie('password', this.formData.password, 30);
+                                _.setCookie('password', Base64.encode(this.formData.password), 30);     // bas64加密
                             }
                             this.$router.push({ path: response.data.url })
                         }
@@ -198,6 +203,14 @@ export default {
         }
     },
     created() {
+        this.$ajax.get("/loginstatus").then(response => {
+            console.log("loginstatus", response)
+
+            if (response.data.retdesc == 'login') {
+                this.$router.push({ path: '/' })
+            }
+        })
+        
         this.$ajax.get("/static/index.json").then(response => {
             console.log("index.json", response);
 
@@ -205,7 +218,7 @@ export default {
         })
 
         let username = _.getCookie('username');
-        let password = _.getCookie('password');
+        let password = Base64.decode(_.getCookie('password'));  //  Base64解码
 
         if (username && password) {
             this.formData.username = username;
