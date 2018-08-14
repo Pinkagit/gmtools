@@ -186,8 +186,8 @@ export default {
                             });
                         } else {
                             if (this.checked) {
-                                _.setCookie('username', this.formData.username, 30);
-                                _.setCookie('password', Base64.encode(this.formData.password), 30);     // bas64加密
+                                _.setCookie('username', this.formData.username, 10);
+                                _.setCookie('password', Base64.encode(this.formData.password), 10);     // bas64加密
                             }
                             this.$router.push({ path: response.data.url })
                         }
