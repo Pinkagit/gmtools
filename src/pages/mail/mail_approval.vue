@@ -104,14 +104,19 @@
                 label="操作"
                 width="150">
                 <template slot-scope="scope">
-                    <el-button
-                    size="mini"
-                    type="primary"
-                    @click="handleOper(scope.$index, scope.row, 1)">发送</el-button>
-                    <el-button
-                    size="mini"
-                    type="danger"
-                    @click="handleOper(scope.$index, scope.row, 0)">删除</el-button>
+                    <template v-if="scope.row.isspecial && scope.row.myprivilege != 1">
+                        <span style="color:#f56c6c;">权限不足</span>
+                    </template>
+                    <template v-else>
+                        <el-button
+                        size="mini"
+                        type="primary"
+                        @click="handleOper(scope.$index, scope.row, 1)">发送</el-button>
+                        <el-button
+                        size="mini"
+                        type="danger"
+                        @click="handleOper(scope.$index, scope.row, 0)">删除</el-button>
+                    </template>
                 </template>
             </el-table-column>
         </el-table>
