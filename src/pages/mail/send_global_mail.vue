@@ -143,14 +143,17 @@ export default {
                     this.isErr = [];
                     
                     for (let i = 0, len = response.data.itemlist.length; i < len; i++) {
-						var oNum = parseInt(response.data.itemlist[i].num);
-						if (proNum[i]) {
-							if (oNum < proNum[i]) {
+                        var oNum = parseInt(response.data.itemlist[i].num);
+                        
+                        if (oNum != -1) {
+                            if (proNum[i]) {
+                                if (oNum < proNum[i]) {
+                                    this.isErr.push(i)
+                                } 
+                            } else {
                                 this.isErr.push(i)
-							} 
-						} else {
-                            this.isErr.push(i)
-						}
+                            }
+                        }
 					}
                 })
                 
