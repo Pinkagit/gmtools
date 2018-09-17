@@ -28,7 +28,7 @@
             <el-table-column
                 label="操作">
                 <template slot-scope="scope">
-                    <el-button type="primary" @click="toDel(scope.row, scope.$index)">解散</el-button>
+                    <el-button type="danger" size="mini" @click="toDel(scope.row, scope.$index)">解散</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -67,22 +67,32 @@ export default {
     },
     methods: {
         onSubmit() {
-            this.loading = true;
+            this.$refs['form'].validate((valid) => {
+                if (valid) {
+                    this.loading = true;
 
-            this.$ajax.post("/league", this.formData).then(response => {
-                console.log(response);
-                this.loading = false;
+                    this.$ajax.post("/league", this.formData).then(response => {
+                        console.log(response);
+                        this.loading = false;
 
-                if (response.data.retcode == 'error') {
-                    this.$message.error(response.data.retdesc);
+                        if (response.data.retcode == 'error') {
+                            this.$message.error(response.data.retdesc);
+                        } else {
+                            if (response.data.retdata) {
+                                let arr = [response.data.retdata]
+                                this.tableData = arr;
+                            } else {
+                                this.$message.warning("未查询到公会")
+                            }
+                        }
+
+                    }).catch(error => {
+                        console.log(error);
+                        this.loading = false;
+                    })
                 } else {
-                    let arr = [response.data.retdata]
-                    this.tableData = arr;
+                    return false;
                 }
-
-            }).catch(error => {
-                console.log(error);
-                this.loading = false;
             })
             
         },

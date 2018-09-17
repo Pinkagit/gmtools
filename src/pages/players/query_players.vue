@@ -73,7 +73,7 @@
                             </el-table-column>
                             <el-table-column label="操作">
                                 <template slot-scope="scope">
-                                    <el-button type="danger" plain @click="downline(scope.row)">下线</el-button>
+                                    <el-button type="danger" size="mini" @click="downline(scope.row)">下线</el-button>
                                 </template>
                             </el-table-column>
                         </el-table>
