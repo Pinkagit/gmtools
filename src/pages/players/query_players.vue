@@ -71,6 +71,11 @@
                             </el-table-column>
                             <el-table-column prop="gold" label="勾玉">
                             </el-table-column>
+                            <el-table-column label="操作">
+                                <template slot-scope="scope">
+                                    <el-button type="danger" plain @click="downline(scope.row)">下线</el-button>
+                                </template>
+                            </el-table-column>
                         </el-table>
                     </el-tab-pane>
                     <el-tab-pane label="背包信息">
@@ -341,6 +346,27 @@ export default {
             }).catch(function(error) {
                 console.log(error);
             })
+      },
+      downline(param) {
+          let obj = {
+              zoneid: param.zoneid,
+              roleid: param.roleid,
+          }
+
+          this.$ajax.post("/player/offline", obj).then(response => {
+              console.log(response);
+
+              if (response.data.retcode == 'error') {
+                  this.$message.error(response.data.retdesc);
+              } else if(response.data.retcode == 'exec_ok') {
+                  this.$message.success(response.data.retdesc);
+              }
+              
+          }).catch(error => {
+              console.log(error);
+          })
+          
+          
       }
     },
     computed: {

@@ -6,6 +6,7 @@ import Qu_players from "@/pages/players/query_players";
 import Ban from "@/pages/players/ban";
 import Gossip from "@/pages/players/gossip";
 import Addcurrency from "@/pages/players/add_currency";
+// import Qu_variable from "@/pages/players/query_variable";
 import Send_P_mail from "@/pages/mail/send_personal_mail";
 import Send_G_mail from "@/pages/mail/send_global_mail";
 import Query_G_mail from "@/pages/mail/query_global_mail";
@@ -33,6 +34,7 @@ import Check_regist from "@/pages/check/check_registration";
 import Check_password from "@/pages/check/forget_password";
 import Check_permission from "@/pages/check/reset_permissions";
 import Record_query from "@/pages/operation_record/query";
+import Relieve_guild from "@/pages/guild/Relieve_guild";
 
 import Login from "@/pages/login";
 import Lose_404 from "@/pages/404";
@@ -64,7 +66,11 @@ export default new Router({
 					path: "add_currency",
 					component: Addcurrency,
 					name: "添加货币"
-				}, {
+				},/*  {
+					path: "query_variable",
+					component: Qu_variable,
+					name: "查询变量"
+				}, */ {
 					path: "send_personal_mail",
 					component: Send_P_mail,
 					name: "发送个人邮件"
@@ -112,6 +118,10 @@ export default new Router({
 					path: "send_radio",
 					component: Send_radio,
 					name: "发送广播"
+				},{
+					path: "relieve_guild",
+					component: Relieve_guild,
+					name: '解除公会'
 				}, {
 					path: "query_tw",
 					component: TW_query,
